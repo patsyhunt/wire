@@ -25,7 +25,6 @@ object versions {
   val kotlinpoet = "1.9.0"
   val moshi = "1.12.0"
   val okhttp = "4.9.1"
-  val okio = "3.0.0"
   val protobuf = "3.17.3"
   val protobufGradlePlugin = "0.8.16"
 }
@@ -54,8 +53,9 @@ object deps {
   val guava = "com.google.guava:guava:${versions.guava}"
 
   object okio {
-    val core = "com.squareup.okio:okio:${versions.okio}"
-    val fakefilesystem = "com.squareup.okio:okio-fakefilesystem:${versions.okio}"
+    val bom = "com.squareup.okio:okio-bom:3.0.0"
+    val core = "com.squareup.okio:okio"
+    val fakefilesystem = "com.squareup.okio:okio-fakefilesystem"
   }
 
   val jsr305 = "com.google.code.findbugs:jsr305:${versions.jsr305}"
