@@ -2296,6 +2296,8 @@ class KotlinGenerator private constructor(
   }
 
   companion object {
+    fun builtInType(protoType: ProtoType): Boolean = protoType in BUILT_IN_TYPES.keys
+
     private val BUILT_IN_TYPES = mapOf(
         ProtoType.BOOL to BOOLEAN,
         ProtoType.BYTES to ByteString::class.asClassName(),

@@ -18,9 +18,7 @@
 package com.squareup.wire
 
 import com.google.protobuf.Any
-import com.google.protobuf.DescriptorProtos
 import com.google.protobuf.Duration
-import com.google.protobuf.FieldOptions
 import com.google.protobuf.ListValue
 import com.google.protobuf.Struct
 import com.google.protobuf.Timestamp
@@ -73,11 +71,6 @@ class Proto3WireProtocCompatibilityTests {
         .build()
 
     assertThat(wireMessage.encode()).isEqualTo(googleMessage.toByteArray())
-
-    // Although the custom options has no label, it shouldn't be "required" to instantiate
-    // `FieldOptions`. We should not fail.
-    assertThat(DescriptorProtos.FieldOptions.newBuilder().build()).isNotNull()
-    assertThat(FieldOptions()).isNotNull()
   }
 
   @Test fun protocJson() {

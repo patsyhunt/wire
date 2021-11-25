@@ -123,6 +123,10 @@ public final class JavaGenerator {
     }
   });
 
+  public static final boolean builtInType(ProtoType protoType) {
+    return BUILT_IN_TYPES_MAP.containsKey(protoType);
+  }
+
   private static final Map<ProtoType, TypeName> BUILT_IN_TYPES_MAP =
       ImmutableMap.<ProtoType, TypeName>builder()
           .put(ProtoType.BOOL, TypeName.BOOLEAN)
